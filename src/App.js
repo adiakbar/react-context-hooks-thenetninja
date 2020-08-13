@@ -4,15 +4,17 @@ import BookList from './components/BookList';
 import ThemeContextProvider from './contexts/ThemeContext';
 import AuthContextProvider from './contexts/AuthContext';
 import BookContextProvider from './contexts/BookContext';
+import BookForm from './components/BookForm';
 
 function App() {
   return (
     <div className="App">
       <ThemeContextProvider>
         <AuthContextProvider>
-          <Navbar /> 
-          <BookContextProvider>  
+          <BookContextProvider> 
+            <Navbar /> 
             <BookList />
+            <BookForm />
           </BookContextProvider>
         </AuthContextProvider>
       </ThemeContextProvider>

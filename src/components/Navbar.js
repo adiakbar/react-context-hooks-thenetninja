@@ -1,8 +1,11 @@
 import React, {useContext} from 'react'
 import {AuthContext} from '../contexts/AuthContext'
+import {BookContext} from '../contexts/BookContext'
 
 const Navbar = () => {
   const {isAuthenticated, toggleAuth} = useContext(AuthContext)
+  const {books} = useContext(BookContext)
+  // console.log(books);
 
   return (
     <nav className="navbar">
@@ -10,6 +13,7 @@ const Navbar = () => {
       <div onClick={toggleAuth}>
         {isAuthenticated ? 'Logged In' : 'Logged Out'}
       </div>
+      <p>Currently you have {books.length} books to get through</p>
     </nav>
   )
 }
